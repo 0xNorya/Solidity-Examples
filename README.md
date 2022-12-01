@@ -18,3 +18,11 @@ Decentralized Autonomous Organization (DAO) smart contracts:
 
 Defi:
   Eth node staking contract
+  
+Nft Marketplace:
+  Create Nft contract
+  Resell Nft contract
+  Sell Created Nft contract
+  
+Ponzi:
+  money doubler contract
