@@ -18,9 +18,12 @@ import "hardhat/console.sol";
 // to the inherited contract's methods.
 contract RaffleFrens is ERC721Enumerable, Ownable {
     using SafeMath for uint256;
-    // Magic given to us by OpenZeppelin to help us keep track of tokenIds.
+    
+    // Magic given to us by OpenZeppn to help us keep track of tokenIds.
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
+
+    
     uint public constant MAX_SUPPLY = 200;
     uint public constant PRICE = 0.0 ether;
     uint public constant MAX_PER_MINT = 5;
@@ -43,18 +46,19 @@ contract RaffleFrens is ERC721Enumerable, Ownable {
     function reserveNFTs() public onlyOwner {
         uint totalMinted = _tokenIds.current();
         require(
-        totalMinted.add(10) < MAX_SUPPLY, "Not enough NFTs"
-     );
+            totalMinted.add(10) < MAX_SUPPLY, "Not enough NFTs"
+        );
         for (uint i = 0; i < 10; i++) {
-          _mintSingleNFT();
+            _mintSingleNFT();
         }
     }
+    
     function _baseURI() internal 
         view 
         virtual 
         override 
         returns (string memory) {
-     return baseTokenURI;
+        return baseTokenURI;
     }
 
     function setBaseURI(string memory _baseTokenURI) public onlyOwner {
